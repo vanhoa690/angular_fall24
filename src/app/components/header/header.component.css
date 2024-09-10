@@ -1,0 +1,9 @@
+.menu-list {
+  gap: 30px;
+  font-size: 18px;
+}
+
+.menu-list > li > a {
+  text-decoration: none;
+  color: white;
+}
