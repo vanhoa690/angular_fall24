@@ -33,3 +33,10 @@
   "products": []
   }
 - package.json: srcript: "server": "json-server db.json",
+
+## HTTP Client + services call API
+
+- app.config.ts: provideHttpClient()
+- services: ng g s services/product
+- http = inject(HttpClient)
+- getAll: http.get("API_URL")
