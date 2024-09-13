@@ -13,7 +13,7 @@ export type Product = {
   providedIn: 'root',
 })
 export class ProductService {
-  apiUrl = 'http://localhost:30000/productss';
+  apiUrl = 'http://localhost:3000/products';
   http = inject(HttpClient);
   getAll() {
     return this.http.get<Product[]>(this.apiUrl);
