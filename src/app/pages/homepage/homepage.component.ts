@@ -17,6 +17,9 @@ type Product = {
   styleUrl: './homepage.component.css',
 })
 export class HomepageComponent {
+  // ghep API: ngOnInit,
+  // show error
+  // thanh cong: gan data
   products: Product[] = [
     {
       id: 1,
