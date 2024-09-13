@@ -9,3 +9,17 @@
 - Header
 - Imports [ten_component]
 - Su dung selector: app-header trong .html
+
+## Tach Layout: Client (header, footer), Admin (Sidebar)
+
+- ng g c layouts/client-layout
+- RouterLink - import, thay the a href = a routerLink
+
+## Data binding
+
+- Gắn kết giá trị: {{pageTitle}}
+- Gắn kết thuộc tính: <img [src]='product.imageUrl'>
+
+# Show ProductList
+
+- NgFor (import NgFor): \*ngFor="let item of list"
