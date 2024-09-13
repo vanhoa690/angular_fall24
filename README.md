@@ -24,3 +24,12 @@
 
 - NgFor (import NgFor): \*ngFor="let item of list"
 - @for (ko can import): @for (item of list; track item.name) {}
+
+## Server: Json - server : @0.17.4
+
+- npm i -D json-server@0.17.4
+- db.json (root: ngang hang package.json)
+  {
+  "products": []
+  }
+- package.json: srcript: "server": "json-server db.json",

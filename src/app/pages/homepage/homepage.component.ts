@@ -15,7 +15,6 @@ type Product = {
   styleUrl: './homepage.component.css',
 })
 export class HomepageComponent {
-  
   products: Product[] = [
     {
       id: 1,
