@@ -16,6 +16,6 @@ export class ProductService {
   http = inject(HttpClient);
 
   getAll() {
-    return this.http.get<Product[]>('http://localhost:3000/products');
+    return this.http.get<Product[]>('http://localhost:3000/prodggggucts');
   }
 }
