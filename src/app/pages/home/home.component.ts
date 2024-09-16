@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { HeaderComponent } from '../../components/header/header.component';
 import { Product, ProductService } from '../../services/product.service';
 import { HotToastService } from '@ngneat/hot-toast';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

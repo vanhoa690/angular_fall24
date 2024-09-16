@@ -1,0 +1,14 @@
+<div class="container">
+  @if(product) {
+  <div class="row">
+    <div class="col">
+      <img [src]="product.image" alt="" />
+    </div>
+    <div class="col">
+      <h2>{{ product.title }}</h2>
+    </div>
+  </div>
+  } @else {
+  <p>Product Not Found</p>
+  }
+</div>
