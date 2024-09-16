@@ -4,6 +4,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 export const routes: Routes = [
   {
@@ -12,6 +13,7 @@ export const routes: Routes = [
     children: [
       { path: '', component: HomepageComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'product/:id', component: ProductDetailComponent },
     ],
   },
   { path: 'login', component: LoginComponent },
