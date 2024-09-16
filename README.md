@@ -40,3 +40,11 @@
 - services: ng g s services/product
 - http = inject(HttpClient)
 - getAll: http.get("API_URL")
+
+## Page bất kỳ Homepage:
+
+- B1: Tạo page: ng g c pages/home
+- B2: Route (app.route): path, component
+- B3: Services: getAllProduct - httpClient - (ng g c services/product)
+- B4: Xử lý logic( .component): call API
+- B5: Render UI

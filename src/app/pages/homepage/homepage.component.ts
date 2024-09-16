@@ -1,13 +1,6 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
-
-type Product = {
-  id: number;
-  title: string;
-  image: string;
-  price: number;
-  description: string;
-};
+import { Component, inject } from '@angular/core';
+import { Product, ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-homepage',
@@ -17,41 +10,10 @@ type Product = {
   styleUrl: './homepage.component.css',
 })
 export class HomepageComponent {
-  // ghep API: ngOnInit,
-  // show error
-  // thanh cong: gan data
-  products: Product[] = [
-    {
-      id: 1,
-      title: 'San pham A',
-      description: 'Mo ta san pham a',
-      price: 111,
-      image:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s',
-    },
-    {
-      id: 2,
-      title: 'San pham B',
-      description: 'Mo ta san pham a',
-      price: 111,
-      image:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s',
-    },
-    {
-      id: 3,
-      title: 'San pham C',
-      description: 'Mo ta san pham a',
-      price: 111,
-      image:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s',
-    },
-    {
-      id: 4,
-      title: 'San pham C',
-      description: 'Mo ta san pham a',
-      price: 111,
-      image:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s',
-    },
-  ];
+  products: Product[] = [];
+  productService = inject(ProductService);
+
+  ngOnInit() {
+    this.productService.getAll().subscribe((data) => (this.products = data));
+  }
 }
