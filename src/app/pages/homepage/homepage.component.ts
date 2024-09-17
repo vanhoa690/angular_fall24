@@ -1,4 +1,3 @@
-import { NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Product, ProductService } from '../../services/product.service';
 import { HotToastService } from '@ngneat/hot-toast';
@@ -6,7 +5,7 @@ import { HotToastService } from '@ngneat/hot-toast';
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [NgFor],
+  imports: [],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css',
 })

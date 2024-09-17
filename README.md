@@ -48,3 +48,15 @@
 - B3: Services: getAllProduct - httpClient - (ng g c services/product)
 - B4: Xử lý logic( .component): call API
 - B5: Render UI
+
+## Page bất kỳ Product Detail:
+
+- B1: Tạo page: ng g c pages/product-detail
+- B2: Route (app.route): path, component
+- B3: Services: getProductDetail
+- B4: Xử lý logic( .component): call API
+- B5: Render UI
+
+## Show Error: angular hot toast
+
+- https://www.npmjs.com/package/@ngneat/hot-toast
