@@ -19,7 +19,9 @@ export class ProductDetailComponent {
     this.route.params.subscribe((params) => {
       this.productService.getProductDetail(params['id']).subscribe({
         next: (data) => (this.product = data),
-        error: () => {},
+        error: () => {
+          alert('Error');
+        },
       });
     });
   }
