@@ -54,7 +54,7 @@
 - B1: Tạo page: ng g c pages/product-detail
 - B2: Route (app.route): path, component
 - B3: Services: getProductDetail
-- B4: Xử lý logic( .component): call API
+- B4: Xử lý logic( .component): call API: ngOnInit ~ useEffect (react)
 - B5: Render UI
 
 ## Show Error: angular hot toast
