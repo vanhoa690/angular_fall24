@@ -13,7 +13,7 @@ export class ProductDetailComponent {
   product: Product | null = null;
   productService = inject(ProductService);
   route = inject(ActivatedRoute);
-  // params = useParams()
+
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.productService.getProductDetail(params['id']).subscribe({
