@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Product, ProductService } from '../../services/product.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,11 +12,14 @@ import { Product, ProductService } from '../../services/product.service';
 export class ProductDetailComponent {
   product: Product | null = null;
   productService = inject(ProductService);
-
+  route = inject(ActivatedRoute);
+  // params = useParams()
   ngOnInit() {
-    this.productService.getProductDetail('2').subscribe({
-      next: (data) => (this.product = data),
-      error: () => alert('Error'),
+    this.route.params.subscribe((params) => {
+      this.productService.getProductDetail(params['id']).subscribe({
+        next: (data) => (this.product = data),
+        error: () => alert('Error'),
+      });
     });
   }
 }
