@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,12 +10,18 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './register.component.css',
 })
 export class RegisterComponent {
-  registerForm = new FormGroup({
+  registerForm: FormGroup = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
   });
 
+  authService = inject(AuthService);
+
   handleSubmit() {
     console.log(this.registerForm.value);
+    this.authService.registerUser(this.registerForm.value).subscribe({
+      next: () => console.log('ok'),
+      error: () => alert('Error'),
+    });
   }
 }
