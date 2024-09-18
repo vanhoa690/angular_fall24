@@ -1,22 +1,26 @@
 import { Component, inject } from '@angular/core';
 import { Product, ProductService } from '../../services/product.service';
-import { NgIf } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [NgIf],
+  imports: [],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css',
 })
 export class ProductDetailComponent {
   product: Product | null = null;
   productService = inject(ProductService);
+  route = inject(ActivatedRoute);
 
   ngOnInit() {
-    this.productService.getProductDetail('2').subscribe({
-      next: (data) => (this.product = data),
-      error: () => {},
+    // params =  useParam()
+    this.route.params.subscribe((params) => {
+      this.productService.getProductDetail(params['id']).subscribe({
+        next: (data) => (this.product = data),
+        error: () => {},
+      });
     });
   }
 }
