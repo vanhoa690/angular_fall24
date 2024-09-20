@@ -10,9 +10,16 @@
         aria-describedby="emailHelp"
         formControlName="email"
       />
-      <div id="emailHelp" class="form-text">
-        We'll never share your email with anyone else.
-      </div>
+      @if(loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+      <small id="emailHelp" class="text-danger"> Email Error </small>
+      }
+      <!-- @if(loginForm.get('email')?.errors?.['required'] &&
+      loginForm.get('email')?.touched) {
+      <small id="emailHelp" class="text-danger"> Email required</small>
+      } @if(loginForm.get('email')?.errors?.['email'] &&
+      loginForm.get('email')?.touched) {
+      <small id="emailHelp" class="text-danger"> Email need format email</small>
+      } -->
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -22,7 +29,17 @@
         id="exampleInputPassword1"
         formControlName="password"
       />
+      @if(loginForm.get('password')?.invalid &&
+      loginForm.get('password')?.touched) {
+      <small id="emailHelp" class="text-danger"> Password Error </small>
+      }
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="loginForm.invalid"
+    >
+      Submit
+    </button>
   </form>
 </div>
