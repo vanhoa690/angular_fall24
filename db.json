@@ -29,5 +29,11 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "email@gmail.com",
+      "password": "$2a$10$OHCZ2iKHionoUPeJ5GnCN.fDuR5yjSy0Wni68UQ20BNZqIUXj4Qv2",
+      "id": 1
+    }
+  ]
 }
