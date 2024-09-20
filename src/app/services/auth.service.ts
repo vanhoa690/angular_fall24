@@ -6,6 +6,10 @@ export type User = {
   password: string;
 };
 
+type LoginRes = {
+  accessToken: string;
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -18,6 +22,6 @@ export class AuthService {
   }
 
   loginUser(data: User) {
-    return this.http.post(`${this.apiUrl}/login`, data);
+    return this.http.post<LoginRes>(`${this.apiUrl}/login`, data);
   }
 }

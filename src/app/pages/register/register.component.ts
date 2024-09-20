@@ -1,25 +1,25 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { AuthService, User } from '../../services/auth.service';
+import { HotToastService } from '@ngneat/hot-toast';
+import { Router } from '@angular/router';
+import { AuthFormComponent } from '../../components/auth-form/auth-form.component';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [AuthFormComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
 export class RegisterComponent {
   authService = inject(AuthService);
+  toast = inject(HotToastService);
+  router = inject(Router);
 
-  registerForm: FormGroup = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-  });
-
-  handleSubmit() {
-    this.authService
-      .registerUser(this.registerForm.value)
-      .subscribe((data) => console.log(data));
+  handleSubmit(values: User) {
+    this.authService.registerUser(values).subscribe(() => {
+      this.toast.success('Done');
+      this.router.navigateByUrl('/login');
+    });
   }
 }

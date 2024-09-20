@@ -46,6 +46,21 @@
       "email": "email@gmail.com",
       "password": "$2a$10$E816hPT3oOqblcWji1QCd.pBgBnhlUan7jso7nV1LalPh7HHbjnA6",
       "id": 1
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$9udcOnbRcSQOnD3bAquWYOABnm0kpxQLyP2uaCSim7u8BC0dDbGPm",
+      "id": 2
+    },
+    {
+      "email": "email22@gmail.com",
+      "password": "$2a$10$tPDl/3e8CnghLm08Z8yujug/X9rSpLtvyNqXjguHQrP170luu6j7S",
+      "id": 3
+    },
+    {
+      "email": "email2@gmail.com",
+      "password": "$2a$10$qcInfkgAfl7U0lpwciAOj.bwd.KEqqKujyWUIOBUSyd4Z17W4zPP.",
+      "id": 4
     }
   ]
 }
