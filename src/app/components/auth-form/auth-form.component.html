@@ -8,6 +8,9 @@
       aria-describedby="emailHelp"
       formControlName="email"
     />
+    @if(authForm.get('email')?.errors && authForm.get('email')?.touched ) {
+    <small class="text-danger">Email errors</small>
+    }
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
