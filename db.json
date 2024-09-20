@@ -44,6 +44,16 @@
       "email": "email@gmail.com",
       "password": "$2a$10$vFm6UTZ7Ucltng5CFaSS6Ox27RSYrnAEAF/s89ajCj790prRRxpzC",
       "id": 3
+    },
+    {
+      "email": "email1@gmail.com",
+      "password": "$2a$10$FnkzSHU27CCKSGIprOvAQObxxpb3668UiS/lH6c33gROnJXKsqwBm",
+      "id": 4
+    },
+    {
+      "email": "hoadv21@fpt.edu.vn",
+      "password": "$2a$10$Uma/IVa1B.WXBwVf0r1Q3.xGFeub5O20WWisaFGWXCbRhMgEttxN.",
+      "id": 5
     }
   ]
 }

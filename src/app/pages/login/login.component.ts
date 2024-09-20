@@ -27,17 +27,25 @@ export class LoginComponent {
   authService = inject(AuthService);
   router = inject(Router);
 
+  get email() {
+    return this.loginForm.get('email');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
+  }
+
   handleSubmit() {
     // console.log(this.loginForm.controls['email'].errors?.['required']);
     console.log(this.loginForm.get('email'));
 
-    // this.authService.loginUser(this.loginForm.value).subscribe({
-    //   next: (data) => {
-    //     console.log(data);
-    //     localStorage.setItem('token', data.accessToken);
-    //     this.router.navigateByUrl('/');
-    //   },
-    //   error: () => alert('Error'),
-    // });
+    this.authService.loginUser(this.loginForm.value).subscribe({
+      next: (data) => {
+        console.log(data);
+        localStorage.setItem('token', data.accessToken);
+        this.router.navigateByUrl('/');
+      },
+      error: () => alert('Error'),
+    });
   }
 }

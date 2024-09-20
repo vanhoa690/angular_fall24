@@ -6,16 +6,16 @@
       <input
         type="email"
         class="form-control"
-        id="exampleInputEmail1"
+        id="email"
         aria-describedby="emailHelp"
         formControlName="email"
       />
-      @if(loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+      @if(email?.invalid && email?.touched) {
       <div>
         <p>Email Error:</p>
-        @if(loginForm.get('email')?.hasError('required')) {
+        @if(email?.hasError('required')) {
         <small id="emailHelp" class="text-danger"> Email required </small>
-        } @if(loginForm.get('email')?.hasError('email')) {
+        } @if(email?.hasError('email')) {
         <small id="emailHelp" class="text-danger"> Email invalid format </small>
         }
       </div>
@@ -29,14 +29,19 @@
         id="exampleInputPassword1"
         formControlName="password"
       />
-      @if(loginForm.get('password')?.invalid &&
-      loginForm.get('password')?.touched) {
+      @if(password?.invalid && password?.touched) {
       <div>
         <p>Password Error:</p>
       </div>
       }
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="loginForm.invalid"
+    >
+      Submit
+    </button>
   </form>
 </div>
