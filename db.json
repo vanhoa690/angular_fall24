@@ -34,6 +34,16 @@
       "email": "sdfs@gmail.com",
       "password": "$2a$10$bkz44AK98cRiMqSc3qr3t.tHgLUC1jLAH3PQFK5sjQycyjIw8pT76",
       "id": 1
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$cvQ6rApIXzJ79KeIV3rN9OQfJQFmG4mX.BjYW1TEYLbtqmd968HVe",
+      "id": 2
+    },
+    {
+      "email": "email@gmail.com",
+      "password": "$2a$10$vFm6UTZ7Ucltng5CFaSS6Ox27RSYrnAEAF/s89ajCj790prRRxpzC",
+      "id": 3
     }
   ]
 }
