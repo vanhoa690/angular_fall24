@@ -21,4 +21,7 @@ export class ProductService {
   getDetail(id: string) {
     return this.http.get<Product>(`${this.apiUrl}/${id}`);
   }
+  deleteProduct(id: number) {
+    return this.http.delete<Product>(`${this.apiUrl}/${id}`);
+  }
 }

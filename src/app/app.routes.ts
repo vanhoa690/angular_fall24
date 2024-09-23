@@ -5,8 +5,28 @@ import { ClientComponent } from './layouts/client/client.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AdminComponent } from './layouts/admin/admin.component';
+import { ProductListComponent } from './pages/admin/product-list/product-list.component';
 
 export const routes: Routes = [
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      {
+        path: 'product/list',
+        component: ProductListComponent,
+      },
+      {
+        path: 'product/add',
+        component: ProductListComponent,
+      },
+      {
+        path: 'product/edit/:id',
+        component: ProductListComponent,
+      },
+    ],
+  },
   {
     path: '',
     component: ClientComponent,
