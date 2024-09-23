@@ -36,9 +36,6 @@ export class LoginComponent {
   }
 
   handleSubmit() {
-    // console.log(this.loginForm.controls['email'].errors?.['required']);
-    console.log(this.loginForm.get('email'));
-
     this.authService.loginUser(this.loginForm.value).subscribe({
       next: (data) => {
         console.log(data);
