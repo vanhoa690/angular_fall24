@@ -14,6 +14,7 @@ export type Product = {
 })
 export class ProductService {
   apiUrl = 'http://localhost:3000/products';
+  headers = { Authorization: 'Bearer my-token' };
   http = inject(HttpClient);
   getAll() {
     return this.http.get<Product[]>(this.apiUrl);
@@ -22,6 +23,8 @@ export class ProductService {
     return this.http.get<Product>(`${this.apiUrl}/${id}`);
   }
   deleteProduct(id: number) {
-    return this.http.delete<Product>(`${this.apiUrl}/${id}`);
+    return this.http.delete<Product>(`${this.apiUrl}/${id}`, {
+      headers: this.headers,
+    });
   }
 }
