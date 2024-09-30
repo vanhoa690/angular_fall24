@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
 export type Product = {
-  id: number;
+  id: number | string;
   title: string;
   image: string;
   price: number;
@@ -21,5 +21,9 @@ export class ProductService {
 
   getProductDetail(id: string) {
     return this.http.get<Product>(`http://localhost:3000/products/${id}`);
+  }
+
+  deleteProduct(id: string | number) {
+    return this.http.delete(`http://localhost:3000/products/${id}`);
   }
 }
