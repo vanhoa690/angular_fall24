@@ -30,7 +30,6 @@ export class ProductListComponent {
         next: () => {
           this.toast.success('Delete Ok');
           location.reload();
-          // filter
         },
         error: () => this.toast.error('Delete Error'),
       });
