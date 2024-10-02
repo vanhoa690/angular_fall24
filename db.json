@@ -6,6 +6,14 @@
       "description": "Mo ta san pham a",
       "price": 111,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
+    },
+    {
+      "title": "san pham hom nay",
+      "id": 2
+    },
+    {
+      "title": "san pham hom nay 2",
+      "id": 3
     }
   ],
   "users": [

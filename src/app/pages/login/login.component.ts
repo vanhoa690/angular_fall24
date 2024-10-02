@@ -28,7 +28,6 @@ export class LoginComponent {
   });
 
   handleLogin() {
-    // console.log(this.loginForm.controls['email'].errors?.['required']);
     console.log(this.loginForm);
 
     this.authService.loginUser(this.loginForm.value).subscribe({

@@ -8,13 +8,17 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ProductListComponent } from './pages/admin/product-list/product-list.component';
 import { adminGuard } from './guard/admin.guard';
+import { ProductAddComponent } from './pages/admin/product-add/product-add.component';
 
 export const routes: Routes = [
   {
     path: 'admin',
     component: AdminLayoutComponent,
     canActivate: [adminGuard],
-    children: [{ path: 'product/list', component: ProductListComponent }],
+    children: [
+      { path: 'product/list', component: ProductListComponent },
+      { path: 'product/add', component: ProductAddComponent },
+    ],
   },
   {
     path: '',
