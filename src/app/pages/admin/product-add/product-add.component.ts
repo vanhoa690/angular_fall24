@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 })
 export class ProductAddComponent {
   addForm: FormGroup = new FormGroup({
-    title: new FormControl('', [Validators.required]),
+    title: new FormControl(''),
     // image
     // price
     // category
@@ -28,15 +28,15 @@ export class ProductAddComponent {
   toast = inject(HotToastService);
   router = inject(Router);
 
-  get title() {
-    return this.addForm.get('title');
-  }
+  // get title() {
+  //   return this.addForm.get('title');
+  // }
 
   handleSubmit() {
-    if (this.addForm.invalid) {
-      this.toast.error('Invalid + Need Validators');
-      return;
-    }
+    // if (this.addForm.invalid) {
+    //   this.toast.error('Invalid + Need Validators');
+    //   return;
+    // }
     // call api
     this.productService.addProduct(this.addForm.value).subscribe({
       next: () => {
