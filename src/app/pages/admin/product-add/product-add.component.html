@@ -9,9 +9,15 @@
         id="title"
         formControlName="title"
       />
-      @if(title?.touched && title?.hasError('required')) {
-      <small class="text-danger">Title is required</small>
-      }
+      <!-- @if(title?.touched) {
+      <div>
+        @if(title?.hasError('required')) {
+        <small class="text-danger">Title is required</small>
+        } @if(title?.hasError('minlength')) {
+        <small class="text-danger">Title minlength 6</small>
+        }
+      </div>
+      } -->
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

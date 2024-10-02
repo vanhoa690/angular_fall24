@@ -18,15 +18,19 @@ import { Router } from '@angular/router';
 })
 export class ProductAddComponent {
   addForm: FormGroup = new FormGroup({
-    title: new FormControl('', [Validators.required]),
+    title: new FormControl('', [
+      // Validators.required,
+      // Validators.minLength(10), // so ky tu > 6
+      // Validators.min(1), // price > 0
+    ]),
     // image
     // price
     // category
   });
 
-  get title() {
-    return this.addForm.get('title');
-  }
+  // get title() {
+  //   return this.addForm.get('title');
+  // }
 
   productService = inject(ProductService);
   toast = inject(HotToastService);
