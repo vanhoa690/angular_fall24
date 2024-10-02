@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 })
 export class ProductAddComponent {
   addForm: FormGroup = new FormGroup({
-    title: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    title: new FormControl('', [Validators.required]),
     // image
     // price
     // category
