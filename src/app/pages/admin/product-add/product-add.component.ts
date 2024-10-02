@@ -1,5 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ProductService } from '../../../services/product.service';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Router } from '@angular/router';
@@ -13,14 +18,25 @@ import { Router } from '@angular/router';
 })
 export class ProductAddComponent {
   addForm: FormGroup = new FormGroup({
-    title: new FormControl(),
+    title: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    // image
+    // price
+    // category
   });
 
   productService = inject(ProductService);
   toast = inject(HotToastService);
   router = inject(Router);
 
+  get title() {
+    return this.addForm.get('title');
+  }
+
   handleSubmit() {
+    if (this.addForm.invalid) {
+      this.toast.error('Invalid + Need Validators');
+      return;
+    }
     // call api
     this.productService.addProduct(this.addForm.value).subscribe({
       next: () => {
