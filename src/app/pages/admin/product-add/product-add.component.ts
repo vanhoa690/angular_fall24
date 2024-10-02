@@ -1,5 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ProductService } from '../../../services/product.service';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Router } from '@angular/router';
@@ -13,8 +18,15 @@ import { Router } from '@angular/router';
 })
 export class ProductAddComponent {
   addForm: FormGroup = new FormGroup({
-    title: new FormControl(''),
+    title: new FormControl('', [Validators.required]),
+    // image
+    // price
+    // category
   });
+
+  get title() {
+    return this.addForm.get('title');
+  }
 
   productService = inject(ProductService);
   toast = inject(HotToastService);
