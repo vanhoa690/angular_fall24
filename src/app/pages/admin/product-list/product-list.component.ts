@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { Product, ProductService } from '../../../services/product.service';
 import { HotToastService } from '@ngneat/hot-toast';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
