@@ -19,7 +19,7 @@ import { Router } from '@angular/router';
 export class ProductAddComponent {
   addForm: FormGroup = new FormGroup({
     title: new FormControl('', [
-      // Validators.required,
+      Validators.required,
       // Validators.minLength(10), // so ky tu > 6
       // Validators.min(1), // price > 0
     ]),
@@ -37,6 +37,10 @@ export class ProductAddComponent {
   router = inject(Router);
 
   handleSubmit() {
+    if (this.addForm.invalid) {
+      this.toast.error('Check Validate di');
+      return;
+    }
     // call api
     this.productService.addProduct(this.addForm.value).subscribe({
       next: () => {
