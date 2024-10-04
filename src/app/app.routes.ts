@@ -9,6 +9,7 @@ import { AdminComponent } from './layouts/admin/admin.component';
 import { ProductListComponent } from './pages/admin/product-list/product-list.component';
 import { authGuard } from './guard/auth.guard';
 import { ProductAddComponent } from './pages/admin/product-add/product-add.component';
+import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,7 @@ export const routes: Routes = [
     children: [
       { path: 'product/list', component: ProductListComponent },
       { path: 'product/add', component: ProductAddComponent },
+      { path: 'product/edit/:id', component: ProductEditComponent },
     ],
   },
   {

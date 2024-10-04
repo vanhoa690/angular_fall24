@@ -10,13 +10,11 @@
         placeholder="title"
         formControlName="title"
       />
-      <!-- @if(title?.touched && title?.hasError('required')) {
+      @if(title?.touched && title?.hasError('required')) {
       <small class="text-danger">Title is Required</small>
-      } -->
+      }
     </div>
 
-    <!-- input date -->
-    <!-- select time bid -->
     <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">
       Submit
     </button>

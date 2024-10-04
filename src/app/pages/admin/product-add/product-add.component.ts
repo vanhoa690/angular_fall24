@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 })
 export class ProductAddComponent {
   addForm: FormGroup = new FormGroup({
-    title: new FormControl(''),
+    title: new FormControl('', [Validators.required]),
     // image
     // price
     // category
@@ -28,9 +28,9 @@ export class ProductAddComponent {
   toast = inject(HotToastService);
   router = inject(Router);
 
-  // get title() {
-  //   return this.addForm.get('title');
-  // }
+  get title() {
+    return this.addForm.get('title');
+  }
 
   handleSubmit() {
     // if (this.addForm.invalid) {

@@ -30,4 +30,8 @@ export class ProductService {
   addProduct(data: Product) {
     return this.http.post('http://localhost:3000/products', data);
   }
+
+  editProduct(id: string, data: Product) {
+    return this.http.put(`http://localhost:3000/products/${id}`, data);
+  }
 }

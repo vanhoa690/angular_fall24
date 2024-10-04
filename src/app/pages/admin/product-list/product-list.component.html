@@ -19,6 +19,9 @@
         <td>{{ product.title }}</td>
         <td>{{ product.price }}</td>
         <td>
+          <a [routerLink]="['/admin/product/edit', product.id]">
+            <button class="btn btn-info">Edit</button>
+          </a>
           <button class="btn btn-danger" (click)="handleDelete(product.id)">
             Delete
           </button>
