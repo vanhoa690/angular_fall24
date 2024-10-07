@@ -1,4 +1,4 @@
 <div class="container">
   <h1 class="text-center my-2">Register</h1>
-  <app-auth-form (onSubmit)="handleSubmit($event)" />
+  <app-auth-form [btnSubmit]="btnSubmit" (onSubmit)="handleSubmit($event)" />
 </div>

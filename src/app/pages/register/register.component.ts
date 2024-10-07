@@ -15,7 +15,7 @@ export class RegisterComponent {
   authService = inject(AuthService);
   toast = inject(HotToastService);
   router = inject(Router);
-
+  btnSubmit = 'Register';
   handleSubmit(values: User) {
     this.authService.registerUser(values).subscribe(() => {
       this.toast.success('Done');
