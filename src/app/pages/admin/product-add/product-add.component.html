@@ -1,22 +1,7 @@
 <div class="container">
   <h1>Add Product</h1>
-  <form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
-    <div class="mb-3">
-      <label for="title" class="form-label">Title</label>
-      <input
-        type="text"
-        class="form-control"
-        id="title"
-        placeholder="title"
-        formControlName="title"
-      />
-      @if(title?.touched && title?.hasError('required')) {
-      <small class="text-danger">Title is Required</small>
-      }
-    </div>
-
-    <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">
-      Submit
-    </button>
-  </form>
+  <app-product-form
+    (onSubmit)="handleSubmit($event)"
+    btnSubmit="Add Product"
+  ></app-product-form>
 </div>

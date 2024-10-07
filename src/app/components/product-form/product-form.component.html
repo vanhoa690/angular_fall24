@@ -1,0 +1,14 @@
+<form [formGroup]="productForm" (ngSubmit)="handleSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      placeholder="title"
+      formControlName="title"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">{{ btnSubmit }}</button>
+</form>

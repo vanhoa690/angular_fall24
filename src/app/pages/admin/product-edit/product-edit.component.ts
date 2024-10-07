@@ -1,21 +1,18 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ProductService } from '../../../services/product.service';
+import { Product, ProductService } from '../../../services/product.service';
 import { HotToastService } from '@ngneat/hot-toast';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProductFormComponent } from '../../../components/product-form/product-form.component';
 
 @Component({
   selector: 'app-product-edit',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ProductFormComponent],
   templateUrl: './product-edit.component.html',
   styleUrl: './product-edit.component.css',
 })
 export class ProductEditComponent {
   productId: string | null = null;
-  editForm: FormGroup = new FormGroup({
-    title: new FormControl(''),
-  });
 
   productService = inject(ProductService);
   toast = inject(HotToastService);
@@ -25,29 +22,19 @@ export class ProductEditComponent {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.productId = params['id'];
-      this.productService.getProductDetail(params['id']).subscribe({
-        next: (data) => {
-          console.log(data);
-          this.editForm.patchValue(data); // update data default
-        },
-        error: () => this.toast.error('Error'),
-      });
     });
   }
 
-  handleSubmit() {
+  handleSubmit(values: Product) {
     // call api
-    console.log(this.productId);
     if (!this.productId) return;
 
-    this.productService
-      .editProduct(this.productId, this.editForm.value)
-      .subscribe({
-        next: () => {
-          this.toast.success('Ok');
-          this.router.navigateByUrl('/admin/product/list');
-        },
-        error: () => this.toast.error('Error'),
-      });
+    this.productService.editProduct(this.productId, values).subscribe({
+      next: () => {
+        this.toast.success('Ok');
+        this.router.navigateByUrl('/admin/product/list');
+      },
+      error: () => this.toast.error('Error'),
+    });
   }
 }
